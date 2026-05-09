@@ -1,0 +1,12 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "control.child.device",
+    "sha256_cert_fingerprints": [
+      "85:B1:73:FE:F1:E5:C2:F2:97:A6:25:2B:3A:72:55:52:8F:84:BC:08:E0:64:D1:78:1F:17:22:08:F2:A6:D9:5D",
+      "28:1A:C8:16:DC:82:27:A1:44:EE:D4:A5:AF:DF:97:A6:7F:6C:B0:B3:0C:2D:1A:D2:C9:46:3B:53:8E:EA:9F:BC",
+      "78:38:DF:F5:AD:02:5E:F9:DE:6F:BC:74:F8:4B:FA:D0:45:D4:2F:9C:57:5F:8F:19:AC:F4:C0:7A:D4:22:C9:CA"
+    ]
+  }
+}]
