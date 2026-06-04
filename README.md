@@ -73,13 +73,13 @@ Child Safe supports QR code enrollment for rapid device setup. This is the recom
 
 ## ✅ Recent Updates
 
-### Version 3.0.2 (Code 52) - Current
+### Version 3.0.2 - Current
 - ⏳ **Granular App Limits**: Introduced **Weekly** usage quotas. Parents can now set different time limits for each day of the week.
 - 🛡️ **Biometric Authentication**: Integrated system-level biometric verification for sensitive administrative actions and password resets.
 - 🎨 **Enhanced Limit Selection**: Redesigned the configuration UI with dedicated hour/minute pickers and a visual day selector.
 - 🚀 **Infrastructure Optimization**: Enhanced device unlock processing and integrated background in-app update checks.
 
-### Version 2.5.5 - Current
+### Version 2.5.5
 *   🎨 **Advanced Management UI**: Rebranded the "Danger Zone" to **Advanced Management** for a more professional and less alarming experience.
 *   🛡️ **Visual Safety Cues**: Introduced Orange accents for critical administrative actions.
 *   🧩 **Thematic Consistency**: Unified iconography and color palettes across the Parent Dashboard.
