@@ -1,0 +1,241 @@
+<!-- Copyright 2025 Vivek Umrao -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Child Safe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FFB300;
+            --primary-soft: rgba(255, 179, 0, 0.08);
+            --secondary: #0F172A;
+            --bg: #F8FAFC;
+            --surface: #FFFFFF;
+            --text-main: #1E293B;
+            --text-muted: #64748B;
+            --border: #E2E8F0;
+            --glass: rgba(255, 255, 255, 0.85);
+            --radius-lg: 28px;
+            --shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0B0F1A;
+                --surface: #161B26;
+                --text-main: #F1F5F9;
+                --text-muted: #94A3B8;
+                --border: #262D3D;
+                --glass: rgba(22, 27, 38, 0.85);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.8;
+            padding: 140px 24px 80px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 48px);
+            max-width: 850px;
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 14px 28px;
+            border-radius: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+        .logo span { color: var(--primary); }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-left: 24px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--primary); }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .policy-card {
+            background: var(--surface);
+            padding: 60px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            letter-spacing: -2.5px;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+        .header h1 span {
+            background: linear-gradient(135deg, var(--primary), #FF8F00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .effective-date {
+            color: var(--text-muted);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin: 48px 0 20px;
+            color: var(--text-main);
+            letter-spacing: -0.8px;
+        }
+
+        .highlight-box {
+            background: var(--primary-soft);
+            border-left: 5px solid var(--primary);
+            padding: 30px;
+            border-radius: 0 20px 20px 0;
+            margin: 40px 0;
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+
+        .data-badge {
+            display: inline-block;
+            background: #FEE2E2;
+            color: #991B1B;
+            padding: 5px 14px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .data-badge { background: #7F1D1D; color: #FEE2E2; }
+        }
+
+        p { margin-bottom: 1.6rem; color: var(--text-main); opacity: 0.9; }
+        ul { margin-bottom: 1.6rem; padding-left: 20px; }
+        li { margin-bottom: 0.8rem; color: var(--text-muted); font-weight: 500; }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .policy-card { padding: 40px 24px; }
+            .header h1 { font-size: 2.2rem; }
+            body { padding-top: 110px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="USER_GUIDE.html" class="logo">🛡️ Child<span>Safe</span></a>
+        <div class="nav-links">
+            <a href="USER_GUIDE.html">User Guide</a>
+            <a href="mailto:manuscriptcode@gmail.com">Contact Support</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="policy-card">
+            <div class="header">
+                <h1>Privacy <span>First.</span></h1>
+                <p class="effective-date">Last Updated: March 05, 2025</p>
+            </div>
+
+            <p>At <strong>Child Safe</strong>, we believe that security should never come at the expense of privacy. Our mission is to provide parents with powerful tools while maintaining the highest standards of data protection for the entire family.</p>
+
+            <div class="highlight-box">
+                Child Safe is built with "Privacy by Design." We do not sell your personal data, and we collect only what is strictly necessary to keep your children safe.
+            </div>
+
+            <h2>1. Transparent Data Collection</h2>
+            <p>To enable monitoring and administrative controls, the following data is securely synced from the <strong>Child Device</strong> to the parent dashboard:</p>
+
+            <span class="data-badge">Location Intelligence</span>
+            <p>We collect background location coordinates to provide real-time updates and movement history. This allows you to verify your child's safety at any time.</p>
+
+            <span class="data-badge">Secure Communications</span>
+            <p>The app accesses SMS messages, call logs, and contacts to help you identify and prevent potentially unsafe interactions or cyberbullying.</p>
+
+            <span class="data-badge">App Analytics</span>
+            <p>We monitor app usage duration and installation lists to enforce screen time policies and allow you to manage which apps are accessible.</p>
+
+            <h2>2. Behavioral Biometrics</h2>
+            <p>Our unique <strong>Smart PIN</strong> feature analyzes entry rhythm and speed. This data is used solely to generate a unique security signature for your device and is never shared or used for identification outside of app security.</p>
+
+            <h2>3. Administrative Rights</h2>
+            <p>Child Safe utilizes high-level Android permissions (Device Administrator & Device Owner) to ensure policies cannot be bypassed. These rights are used exclusively for:</p>
+            <ul>
+                <li>Preventing unauthorized uninstallation.</li>
+                <li>Enforcing Kiosk Mode and app restrictions.</li>
+                <li>Remote device locking for screen time compliance.</li>
+            </ul>
+
+            <h2>4. Security & Storage</h2>
+            <p>All family data is encrypted using 256-bit SSL/TLS in transit and stored in secure, compartmentalized databases provided by Google Firebase. Access is strictly limited to the authenticated parent account.</p>
+
+            <h2>5. Your Data, Your Control</h2>
+            <p>You have the absolute right to access, export, or delete your family's data. Account deletion can be performed instantly via the app settings, which permanently wipes all associated cloud records.</p>
+
+            <h2>6. Contact Us</h2>
+            <p>Questions about our privacy practices? Reach out to our dedicated support team at <a href="mailto:manuscriptcode@gmail.com" style="color: var(--primary); font-weight: 700; text-decoration: none;">manuscriptcode@gmail.com</a>.</p>
+        </div>
+
+        <footer>
+            <p>Copyright © 2025 Vivek Umrao. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
