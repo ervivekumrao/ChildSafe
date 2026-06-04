@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | Child Safe</title>
+    <title>Privacy Policy | ChildSafe</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -71,8 +71,17 @@
             font-size: 1.2rem;
             color: var(--text-main);
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        .logo span { color: var(--primary); }
+        .logo img {
+            height: 28px;
+            width: 28px;
+            border-radius: 6px;
+        }
+        .logo .brand-safe { color: var(--primary); }
+        .logo .brand-text { display: flex; align-items: center; }
 
         .nav-links a {
             text-decoration: none;
@@ -179,9 +188,9 @@
 <body>
 
     <nav class="navbar">
-        <a href="USER_GUIDE.html" class="logo">🛡️ Child<span>Safe</span></a>
+        <a href="index.html" class="logo"><img src="app/src/main/ic_launcher-playstore.png" alt="Logo"><span class="brand-text">Child<span class="brand-safe">Safe</span></span></a>
         <div class="nav-links">
-            <a href="USER_GUIDE.html">User Guide</a>
+            <a href="index.html">User Guide</a>
             <a href="mailto:manuscriptcode@gmail.com">Contact Support</a>
         </div>
     </nav>
@@ -193,10 +202,10 @@
                 <p class="effective-date">Last Updated: March 05, 2025</p>
             </div>
 
-            <p>At <strong>Child Safe</strong>, we believe that security should never come at the expense of privacy. Our mission is to provide parents with powerful tools while maintaining the highest standards of data protection for the entire family.</p>
+            <p>At <strong>ChildSafe</strong>, we believe that security should never come at the expense of privacy. Our mission is to provide parents with powerful tools while maintaining the highest standards of data protection for the entire family.</p>
 
             <div class="highlight-box">
-                Child Safe is built with "Privacy by Design." We do not sell your personal data, and we collect only what is strictly necessary to keep your children safe.
+                ChildSafe is built with "Privacy by Design." We do not sell your personal data, and we collect only what is strictly necessary to keep your children safe.
             </div>
 
             <h2>1. Transparent Data Collection</h2>
@@ -215,7 +224,7 @@
             <p>Our unique <strong>Smart PIN</strong> feature analyzes entry rhythm and speed. This data is used solely to generate a unique security signature for your device and is never shared or used for identification outside of app security.</p>
 
             <h2>3. Administrative Rights</h2>
-            <p>Child Safe utilizes high-level Android permissions (Device Administrator & Device Owner) to ensure policies cannot be bypassed. These rights are used exclusively for:</p>
+            <p>ChildSafe utilizes high-level Android permissions (Device Administrator & Device Owner) to ensure policies cannot be bypassed. These rights are used exclusively for:</p>
             <ul>
                 <li>Preventing unauthorized uninstallation.</li>
                 <li>Enforcing Kiosk Mode and app restrictions.</li>

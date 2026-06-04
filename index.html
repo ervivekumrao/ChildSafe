@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Child Safe | Ultimate User Guide</title>
+    <title>ChildSafe | Ultimate User Guide</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -80,9 +80,15 @@
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
-        .logo span { color: var(--primary); }
+        .logo img {
+            height: 32px;
+            width: 32px;
+            border-radius: 8px;
+        }
+        .logo .brand-safe { color: var(--primary); }
+        .logo .brand-text { display: flex; align-items: center; }
 
         .nav-links { display: flex; gap: 20px; }
         .nav-links a {
@@ -245,6 +251,16 @@
             font-weight: 700;
             margin-bottom: 8px;
         }
+        .step-content p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+        .step-content ul {
+            margin-top: 10px;
+            margin-left: 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
 
         .footer {
             text-align: center;
@@ -252,6 +268,19 @@
             background: var(--surface);
             border-top: 1px solid var(--border);
         }
+        .footer-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+        }
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .footer-links a:hover { color: var(--primary); }
 
         [data-reveal] {
             opacity: 0;
@@ -274,13 +303,13 @@
 <body>
 
     <nav class="navbar">
-        <a href="#" class="logo">🛡️ Child<span>Safe</span></a>
+        <a href="index.html" class="logo"><img src="app/src/main/ic_launcher-playstore.png" alt="Logo"><span class="brand-text">Child<span class="brand-safe">Safe</span></span></a>
         <div class="nav-links">
             <a href="#dashboard">Dashboard</a>
             <a href="#control">Usage</a>
             <a href="#kiosk">Kiosk</a>
-            <a href="#security">Security</a>
             <a href="#setup">Setup</a>
+            <a href="PRIVACY_POLICY.html">Privacy</a>
         </div>
     </nav>
 
@@ -382,17 +411,40 @@
                 <ul class="feature-list">
                     <li><strong>Remote Reset:</strong> Change device PIN or Password remotely if forgotten.</li>
                     <li><strong>Anti-Tamper:</strong> Prevents unauthorized uninstallation or clearing of app data.</li>
-                    <li><strong>Management Removal:</strong> Securely end device management with parent authorization.</li>
+                    <li><strong>Advanced Management:</strong> End device management securely with parent authorization.</li>
                 </ul>
             </div>
             <div class="card" id="security" data-reveal>
                 <div class="card-icon">👤</div>
                 <h3>Profile & Security</h3>
                 <ul class="feature-list">
-                    <li><strong>Theme Support:</strong> Toggle between Light and Dark modes for comfortable viewing.</li>
                     <li><strong>Smart PIN:</strong> Behavioral biometrics that learn your unique typing rhythm.</li>
                     <li><strong>Biometric Login:</strong> Use Fingerprint or Face Unlock for fast, secure access.</li>
+                    <li><strong>Profile Customization:</strong> Set profile photos for both parent and child accounts.</li>
                 </ul>
+            </div>
+        </div>
+
+        <!-- Section: Intelligent Infrastructure -->
+        <div class="section-header" data-reveal>
+            <h2>Intelligent Infrastructure</h2>
+            <p>Built for reliability and seamless performance.</p>
+        </div>
+        <div class="grid">
+            <div class="card" data-reveal>
+                <div class="card-icon">🔄</div>
+                <h3>Real-time Sync</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Powered by Google Firebase, policy changes and monitoring data stay synchronized instantly between parent and child devices.</p>
+            </div>
+            <div class="card" data-reveal>
+                <div class="card-icon">🚀</div>
+                <h3>Direct Boot Support</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Security and monitoring features start automatically even before the child device is unlocked after a reboot.</p>
+            </div>
+            <div class="card" data-reveal>
+                <div class="card-icon">🆙</div>
+                <h3>Intelligent Updates</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Automatic in-app update checks and support for system-level managed updates on enrolled devices.</p>
             </div>
         </div>
 
@@ -405,35 +457,58 @@
             <div class="card-icon">🛡️</div>
             <h3>Privacy & Trust</h3>
             <p style="color: var(--text-muted); font-size: 1.1rem;">
-                Child Safe is built with a <strong>privacy-first</strong> approach. We collect only the data necessary to provide parental safety features and never share your family's personal information. Our goal is to foster trust between parents and children while providing the tools needed for a balanced digital lifestyle.
+                ChildSafe is built with a <strong>privacy-first</strong> approach. We collect only the data necessary to provide parental safety features and never share your family's personal information. Our goal is to foster trust between parents and children while providing the tools needed for a balanced digital lifestyle.
             </p>
         </div>
 
         <!-- Section: Setup Guide -->
         <div id="setup" class="section-header" data-reveal>
-            <h2>Quick Setup</h2>
-            <p>The path to a safer digital future.</p>
+            <h2>Comprehensive Setup Guide</h2>
+            <p>Follow these detailed steps to ensure full administrative control.</p>
         </div>
         <div class="setup-wrapper" data-reveal>
             <div class="step-row">
                 <div class="step-badge">1</div>
-                <div class="step-info">
-                    <h4>Commander Setup</h4>
-                    <p>Install Child Safe on your device and create a Parent account. This will be your control center.</p>
+                <div class="step-content">
+                    <h4>Command Center Activation</h4>
+                    <p>Install ChildSafe on your primary (Parent) device. Sign up for a new account and verify your email.</p>
+                    <ul>
+                        <li>On the <strong>User Type</strong> screen, select <strong>Parent</strong>.</li>
+                        <li>Complete your profile setup, including your name and optional profile picture.</li>
+                    </ul>
                 </div>
             </div>
             <div class="step-row">
                 <div class="step-badge">2</div>
                 <div class="step-info">
-                    <h4>The Secret Scanner</h4>
-                    <p>On a factory-reset child device, tap <strong>6 times</strong> on the "Welcome" screen to reveal the hidden scanner.</p>
+                    <h4>The "Secret Scanner" Mode</h4>
+                    <p>Start with a new or factory-reset child device. This is essential for granting "Device Owner" status.</p>
+                    <ul>
+                        <li>On the first <strong>"Welcome"</strong> screen, tap <strong>six times</strong> in the same spot (outside of buttons).</li>
+                        <li>A hidden QR code scanner will launch. Ensure the device has a stable internet connection.</li>
+                    </ul>
                 </div>
             </div>
             <div class="step-row">
                 <div class="step-badge">3</div>
                 <div class="step-info">
-                    <h4>Provision & Protect</h4>
-                    <p>Scan your unique dashboard QR code. The device will auto-configure with enterprise-grade protection.</p>
+                    <h4>Secure Provisioning</h4>
+                    <p>Open your Parent Dashboard and tap the <strong>+</strong> button to reveal your unique enrollment QR code.</p>
+                    <ul>
+                        <li>Scan the QR code with the child's device. Follow the prompts to connect to Wi-Fi.</li>
+                        <li>The system will automatically download and provision the management profile.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="step-row">
+                <div class="step-badge">4</div>
+                <div class="step-info">
+                    <h4>Identity & Enrollment</h4>
+                    <p>Launch ChildSafe on the child's device and sign in with your parent account credentials.</p>
+                    <ul>
+                        <li>Select <strong>Kid</strong> as the user type and enter the child's name.</li>
+                        <li>Complete the on-screen permission prompts to finalize the link to your dashboard.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -441,8 +516,12 @@
     </main>
 
     <footer class="footer">
-        <p><strong>Child Safe</strong> | Protecting the Next Generation</p>
-        <p style="margin-top: 10px; opacity: 0.5;">Copyright © 2025 Vivek Umrao. All rights reserved.</p>
+        <p><strong>ChildSafe</strong> | Protecting the Next Generation</p>
+        <div class="footer-links">
+            <a href="PRIVACY_POLICY.html">Privacy Policy</a>
+            <a href="mailto:manuscriptcode@gmail.com">Support</a>
+        </div>
+        <p style="margin-top: 20px; opacity: 0.5;">Copyright © 2025 Vivek Umrao. All rights reserved.</p>
     </footer>
 
     <script>
