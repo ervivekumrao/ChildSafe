@@ -1,0 +1,458 @@
+<!-- Copyright 2025 Vivek Umrao -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Safe | Ultimate User Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FFB300;
+            --primary-soft: rgba(255, 179, 0, 0.1);
+            --secondary: #0F172A;
+            --accent: #FF4081;
+            --bg: #F8FAFC;
+            --surface: #FFFFFF;
+            --text-main: #1E293B;
+            --text-muted: #64748B;
+            --border: #E2E8F0;
+            --glass: rgba(255, 255, 255, 0.85);
+            --radius-lg: 28px;
+            --radius-md: 18px;
+            --shadow: 0 10px 30px -10px rgba(0,0,0,0.08);
+            --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.12);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0B0F1A;
+                --surface: #161B26;
+                --text-main: #F1F5F9;
+                --text-muted: #94A3B8;
+                --border: #262D3D;
+                --glass: rgba(22, 27, 38, 0.85);
+                --primary-soft: rgba(255, 179, 0, 0.15);
+                --shadow: 0 10px 30px -10px rgba(0,0,0,0.3);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        .navbar {
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 48px);
+            max-width: 1000px;
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 14px 28px;
+            border-radius: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo span { color: var(--primary); }
+
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        .nav-links a:hover { color: var(--primary); }
+
+        .hero {
+            padding: 180px 24px 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 600px;
+            background: radial-gradient(circle, var(--primary-soft) 0%, transparent 70%);
+            z-index: -1;
+            filter: blur(80px);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 24px;
+            letter-spacing: -3px;
+        }
+        .hero h1 em {
+            font-style: normal;
+            background: linear-gradient(135deg, var(--primary), #FF8F00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px 100px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            margin-top: 80px;
+        }
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-bottom: 16px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 28px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--surface);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
+        }
+
+        .card-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--primary-soft);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 24px;
+            color: var(--primary);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+        .feature-list li {
+            padding-left: 28px;
+            position: relative;
+            margin-bottom: 12px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .setup-wrapper {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 60px;
+            border: 1px solid var(--border);
+            margin-bottom: 80px;
+        }
+
+        .step-row {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 48px;
+            position: relative;
+        }
+        .step-row:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 60px;
+            bottom: -40px;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .step-badge {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+
+        .step-content h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 80px 24px;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+        }
+
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        [data-reveal].visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .navbar { top: 16px; width: calc(100% - 32px); }
+            .nav-links { display: none; }
+            .hero { padding-top: 140px; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="logo">🛡️ Child<span>Safe</span></a>
+        <div class="nav-links">
+            <a href="#dashboard">Dashboard</a>
+            <a href="#control">Usage</a>
+            <a href="#kiosk">Kiosk</a>
+            <a href="#security">Security</a>
+            <a href="#setup">Setup</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1 data-reveal>Master Your Child's <em>Digital Safety</em></h1>
+        <p data-reveal>Explore every feature designed to keep your family protected, balanced, and informed.</p>
+    </header>
+
+    <main class="container">
+
+        <!-- Section: Parent Dashboard -->
+        <div id="dashboard" class="section-header" data-reveal>
+            <h2>Child Dashboard</h2>
+            <p>Your central hub for monitoring a specific child device.</p>
+        </div>
+        <div class="grid">
+            <div class="card" data-reveal>
+                <div class="card-icon">📊</div>
+                <h3>Live Insights</h3>
+                <ul class="feature-list">
+                    <li><strong>Quick Stats:</strong> Instant view of account verification and linked devices.</li>
+                    <li><strong>Usage Reports:</strong> Detailed breakdown of app screen time (Daily/Weekly/Monthly).</li>
+                    <li><strong>Device Health:</strong> Live battery percentage and connectivity status tracking.</li>
+                </ul>
+            </div>
+            <div class="card" data-reveal>
+                <div class="card-icon">📡</div>
+                <h3>Advanced Tracking</h3>
+                <ul class="feature-list">
+                    <li><strong>Real-time Locate:</strong> Pinpoint exact coordinates with high-precision radar.</li>
+                    <li><strong>Periodic Routes:</strong> Automated snapshots of movements over selected durations (15m to 24h).</li>
+                    <li><strong>Location History:</strong> View historical paths and timestamps of where the device has been.</li>
+                </ul>
+            </div>
+            <div class="card" data-reveal>
+                <div class="card-icon">💬</div>
+                <h3>Safety Logs</h3>
+                <ul class="feature-list">
+                    <li><strong>SMS Monitoring:</strong> View incoming and outgoing text messages remotely.</li>
+                    <li><strong>Call History:</strong> Access detailed call logs with timestamps and contact names.</li>
+                    <li><strong>Contact List:</strong> Browse the child's full address book to ensure safe social circles.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section: Usage & App Control -->
+        <div id="control" class="section-header" data-reveal>
+            <h2>Usage & App Control</h2>
+            <p>Granular control over how and when apps are used.</p>
+        </div>
+        <div class="grid">
+            <div class="card" data-reveal>
+                <div class="card-icon">📱</div>
+                <h3>Application Management</h3>
+                <ul class="feature-list">
+                    <li><strong>Remote Blocking:</strong> Instantly hide apps from the launcher or suspend their execution.</li>
+                    <li><strong>App Permissions:</strong> Review and manage permissions granted to individual applications.</li>
+                    <li><strong>Kiosk Inclusion:</strong> Choose which apps are allowed during focused study or play sessions.</li>
+                </ul>
+            </div>
+            <div class="card" data-reveal>
+                <div class="card-icon">⏳</div>
+                <h3>Screen Time Limits</h3>
+                <ul class="feature-list">
+                    <li><strong>Individual App Limits:</strong> Set daily time quotas for specific time-sink apps.</li>
+                    <li><strong>Weekly Scheduling:</strong> Configure different limits for weekdays and weekends.</li>
+                    <li><strong>Automatic Lock:</strong> Apps become unusable once their daily quota is reached.</li>
+                </ul>
+            </div>
+            <div class="card" data-reveal>
+                <div class="card-icon">🔒</div>
+                <h3>Device Restrictions</h3>
+                <ul class="feature-list">
+                    <li><strong>Smart Locking:</strong> Set global device lock schedules to ensure healthy sleep routines.</li>
+                    <li><strong>Emergency Bypass:</strong> Critical features like emergency calls remain always available.</li>
+                    <li><strong>Remote Commands:</strong> Force lock, unlock, or reboot the device instantly from your dashboard.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section: Kiosk Space -->
+        <div id="kiosk" class="section-header" data-reveal>
+            <h2>Kiosk & This Device</h2>
+            <p>Features active on the child device and administrative tools.</p>
+        </div>
+        <div class="grid">
+            <div class="card" data-reveal>
+                <div class="card-icon">🖥️</div>
+                <h3>Kiosk Space</h3>
+                <ul class="feature-list">
+                    <li><strong>Focus Mode:</strong> Restrict the device to only a set of parent-approved applications.</li>
+                    <li><strong>Secure Launcher:</strong> Prevents exiting to the standard home screen without permission.</li>
+                    <li><strong>Safe Environment:</strong> Ideal for educational purposes or supervised play.</li>
+                </ul>
+            </div>
+            <div class="card" data-reveal>
+                <div class="card-icon">🛠️</div>
+                <h3>Administrative Tools</h3>
+                <ul class="feature-list">
+                    <li><strong>Remote Reset:</strong> Change device PIN or Password remotely if forgotten.</li>
+                    <li><strong>Anti-Tamper:</strong> Prevents unauthorized uninstallation or clearing of app data.</li>
+                    <li><strong>Management Removal:</strong> Securely end device management with parent authorization.</li>
+                </ul>
+            </div>
+            <div class="card" id="security" data-reveal>
+                <div class="card-icon">👤</div>
+                <h3>Profile & Security</h3>
+                <ul class="feature-list">
+                    <li><strong>Theme Support:</strong> Toggle between Light and Dark modes for comfortable viewing.</li>
+                    <li><strong>Smart PIN:</strong> Behavioral biometrics that learn your unique typing rhythm.</li>
+                    <li><strong>Biometric Login:</strong> Use Fingerprint or Face Unlock for fast, secure access.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section: Commitment -->
+        <div class="section-header" data-reveal>
+            <h2>Ethical Commitment</h2>
+            <p>We believe technology should serve families, not control them.</p>
+        </div>
+        <div class="card" style="max-width: 800px; margin: 0 auto 80px;" data-reveal>
+            <div class="card-icon">🛡️</div>
+            <h3>Privacy & Trust</h3>
+            <p style="color: var(--text-muted); font-size: 1.1rem;">
+                Child Safe is built with a <strong>privacy-first</strong> approach. We collect only the data necessary to provide parental safety features and never share your family's personal information. Our goal is to foster trust between parents and children while providing the tools needed for a balanced digital lifestyle.
+            </p>
+        </div>
+
+        <!-- Section: Setup Guide -->
+        <div id="setup" class="section-header" data-reveal>
+            <h2>Quick Setup</h2>
+            <p>The path to a safer digital future.</p>
+        </div>
+        <div class="setup-wrapper" data-reveal>
+            <div class="step-row">
+                <div class="step-badge">1</div>
+                <div class="step-info">
+                    <h4>Commander Setup</h4>
+                    <p>Install Child Safe on your device and create a Parent account. This will be your control center.</p>
+                </div>
+            </div>
+            <div class="step-row">
+                <div class="step-badge">2</div>
+                <div class="step-info">
+                    <h4>The Secret Scanner</h4>
+                    <p>On a factory-reset child device, tap <strong>6 times</strong> on the "Welcome" screen to reveal the hidden scanner.</p>
+                </div>
+            </div>
+            <div class="step-row">
+                <div class="step-badge">3</div>
+                <div class="step-info">
+                    <h4>Provision & Protect</h4>
+                    <p>Scan your unique dashboard QR code. The device will auto-configure with enterprise-grade protection.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p><strong>Child Safe</strong> | Protecting the Next Generation</p>
+        <p style="margin-top: 10px; opacity: 0.5;">Copyright © 2025 Vivek Umrao. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const reveal = () => {
+            document.querySelectorAll('[data-reveal]').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 50) el.classList.add('visible');
+            });
+        };
+        window.addEventListener('scroll', reveal);
+        window.addEventListener('load', reveal);
+    </script>
+</body>
+</html>
